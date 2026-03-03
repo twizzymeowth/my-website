@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Christopher Kundrat -- Cybersecurity Portfolio",
+  title: "Christopher Kundrat -- Cybersecurity Portfolio" /* PLACEHOLDER: Replace with your name & title */,
   description:
-    "Cybersecurity student at Old Dominion University. Ethical hacking, cloud security, penetration testing, and security consulting.",
+    "Cybersecurity student at Old Dominion University. Ethical hacking, cloud security, penetration testing, and security consulting." /* PLACEHOLDER: Replace with your description for SEO */,
 };
 
 export const viewport: Viewport = {
