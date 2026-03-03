@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0c;
-  --foreground: #e4e4e7;
-  --card: #111114;
-  --card-foreground: #e4e4e7;
-  --muted: #1c1c21;
-  --muted-foreground: #71717a;
-  --accent: #22d3ee;
-  --accent-foreground: #0a0a0c;
-  --border: #27272a;
-  --ring: #22d3ee;
+  --background: #121212;
+  --foreground: #ffffff;
+  --card: #181818;
+  --card-foreground: #ffffff;
+  --muted: #282828;
+  --muted-foreground: #a7a7a7;
+  --accent: #1DB954;
+  --accent-foreground: #000000;
+  --border: #282828;
+  --ring: #1DB954;
   --radius: 0.5rem;
+  --surface: #1a1a1a;
 }
 
 @theme inline {
@@ -25,6 +26,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-surface: var(--surface);
   --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
 }
@@ -41,4 +43,22 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for Spotify feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
 }

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,8 +12,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Personal portfolio - Developer & designer crafting digital experiences.",
+  title: "Christopher Kundrat -- Cybersecurity Portfolio",
+  description:
+    "Cybersecurity student at Old Dominion University. Ethical hacking, cloud security, penetration testing, and security consulting.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#121212",
 };
 
 export default function RootLayout({
