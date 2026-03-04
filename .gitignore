@@ -1,1 +1,20 @@
+# Dependencies
 node_modules
+
+# Next.js
+.next/
+out/
+
+# Environment
+.env*.local
+
+# IDE
+.idea/
+.vscode/
+
+# Debug
+npm-debug.log*
+
+# Sanity
+.sanity/
+dist/
