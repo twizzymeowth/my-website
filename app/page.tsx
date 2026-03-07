@@ -5,6 +5,8 @@ import {
   getSectionItemsByCategory,
   getSiteSettings,
 } from "@/sanity/lib/queries";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "@sanity/visual-editing/next";
 
 const fallbackAcademics = [
   {
@@ -107,12 +109,14 @@ const fallbackSkills = [
 ];
 
 export default async function Home() {
+  const { isEnabled: isDraft } = await draftMode();
+
   const [academicsData, cyberClinicData, skillsData, settings] =
     await Promise.all([
-      getSectionItemsByCategory("academics"),
-      getSectionItemsByCategory("cyberClinic"),
-      getSectionItemsByCategory("skills"),
-      getSiteSettings(),
+      getSectionItemsByCategory("academics", isDraft),
+      getSectionItemsByCategory("cyberClinic", isDraft),
+      getSectionItemsByCategory("skills", isDraft),
+      getSiteSettings(isDraft),
     ]);
 
   const academics = academicsData.length > 0 ? academicsData : fallbackAcademics;
@@ -140,6 +144,7 @@ export default async function Home() {
           </footer>
         </div>
       </main>
+      {isDraft && <VisualEditing />}
     </div>
   );
 }
