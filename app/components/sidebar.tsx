@@ -49,7 +49,7 @@ const quickLinks = [
   { label: "IDS Research Essay", href: "https://drive.google.com/file/d/1VAxS-RrkzXCRej0sFfZBLhhjDmZB-12m/view?usp=sharing" },
   { label: "Executive Reflection Presentation", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
   { label: "Lab Project", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
-  { label: "Capstone Project", href: "https://drive.google.com/file/d/1V6WOkPdPeMkXXh4jISHHYA_e2uwPHLvk/view?usp=sharing" },
+  { label: "C++ Cryptographic Calculator", href: "https://drive.google.com/file/d/1V6WOkPdPeMkXXh4jISHHYA_e2uwPHLvk/view?usp=sharing" },
   { label: "Resume", href: "https://drive.google.com/file/d/1Oout-oQ-5UhfC3dEYIe0vH7P2KJw1s5a/view?usp=sharing" },
 ];
 
@@ -103,20 +103,20 @@ export async function Sidebar() {
           <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Quick Links
           </h3>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2">
             {quickLinks.map(({ label, href }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 rounded-md px-2 py-1.5 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                className="flex items-center justify-center gap-2 rounded-full bg-accent/10 px-3 py-2 text-xs font-medium text-accent transition-all hover:bg-accent hover:text-accent-foreground"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0 text-accent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                   <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
                   <path d="M14 2v4a2 2 0 0 0 2 2h4" />
                 </svg>
-                <span className="leading-tight">{label}</span>
+                <span className="truncate">{label}</span>
               </a>
             ))}
           </div>
