@@ -13,13 +13,22 @@ const navItems = [
     active: true,
   },
   {
-    label: "Academics",
+    label: "Education",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
       </svg>
     ),
-    href: "#academics",
+    href: "#education",
+  },
+  {
+    label: "Skills",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+      </svg>
+    ),
+    href: "#skills",
   },
   {
     label: "Experience",
@@ -31,17 +40,17 @@ const navItems = [
         <rect width="20" height="14" x="2" y="6" rx="2" />
       </svg>
     ),
-    href: "#cyber-clinic-work",
+    href: "#experience",
   },
-  {
-    label: "Skills",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
-    href: "#skills-tools",
-  },
+];
+
+const quickLinks = [
+  { label: "Final Reflection Essay", href: "https://drive.google.com/file/d/1qn7uIq0Se5yJ9bONxd4ZlC8bMWtrfx9y/view?usp=sharing" },
+  { label: "IDS Research Essay", href: "https://drive.google.com/file/d/1VAxS-RrkzXCRej0sFfZBLhhjDmZB-12m/view?usp=sharing" },
+  { label: "Executive Reflection Presentation", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
+  { label: "Lab Project", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
+  { label: "C++ Cryptographic Calculator", href: "https://drive.google.com/file/d/1V6WOkPdPeMkXXh4jISHHYA_e2uwPHLvk/view?usp=sharing" },
+  { label: "Resume", href: "https://drive.google.com/file/d/1Oout-oQ-5UhfC3dEYIe0vH7P2KJw1s5a/view?usp=sharing" },
 ];
 
 export async function Sidebar() {
@@ -90,39 +99,26 @@ export async function Sidebar() {
 
       {/* Quick links card */}
       <div className="flex flex-1 flex-col justify-between rounded-lg bg-surface p-4">
-        <div>
+        <div className="overflow-y-auto">
           <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Quick Links
           </h3>
           <div className="flex flex-col gap-2">
-            <a
-              href={researchPaperUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-              </svg>
-              Research Paper
-            </a>
-            {resumeUrl && (
+            {quickLinks.map(({ label, href }) => (
               <a
-                href={resumeUrl}
+                key={label}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="flex items-center justify-center gap-2 rounded-full bg-accent/10 px-3 py-2 text-xs font-medium text-accent transition-all hover:bg-accent hover:text-accent-foreground"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                   <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
                   <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                  <path d="M9 13h6" />
-                  <path d="M9 17h3" />
                 </svg>
-                Resume
+                <span className="truncate">{label}</span>
               </a>
-            )}
+            ))}
           </div>
         </div>
 
