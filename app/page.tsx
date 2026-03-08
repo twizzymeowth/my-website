@@ -6,7 +6,7 @@ import {
   getSiteSettings,
 } from "@/sanity/lib/queries";
 import { draftMode } from "next/headers";
-import { VisualEditing } from "@sanity/visual-editing/next";
+
 
 const fallbackAcademics = [
   {
@@ -144,7 +144,6 @@ export default async function Home() {
           </footer>
         </div>
       </main>
-      {isDraft && <VisualEditing />}
     </div>
   );
 }
