@@ -45,16 +45,12 @@ const navItems = [
 ];
 
 const quickLinks = [
-  { label: "Final Reflection Essay", href: "#" },
-  { label: "CYSE 450 Lab 5 - SQL Injection Attack", href: "#" },
-  { label: "Tenable Vulnerability Scan Report", href: "#" },
-  { label: "Ethical Hacking Lab on Kali Linux", href: "#" },
-  { label: "Python Cryptographic Calculator", href: "#" },
-  { label: "Linux & Crontab Configuration", href: "#" },
-  { label: "ServiceNow / Active Directory Help Desk Ticket", href: "#" },
-  { label: "CYSE 280 Research Paper: AI in Cloud Security", href: "#" },
-  { label: "Executive Reflection Presentation: City of Suffolk", href: "#" },
-  { label: "Individual Final Reflection: Cyber Clinic", href: "#" },
+  { label: "Final Reflection Essay", href: "https://drive.google.com/file/d/1qn7uIq0Se5yJ9bONxd4ZlC8bMWtrfx9y/view?usp=sharing" },
+  { label: "IDS Research Essay", href: "https://drive.google.com/file/d/1VAxS-RrkzXCRej0sFfZBLhhjDmZB-12m/view?usp=sharing" },
+  { label: "Executive Reflection Presentation", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
+  { label: "Lab Project", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
+  { label: "Capstone Project", href: "https://drive.google.com/file/d/1V6WOkPdPeMkXXh4jISHHYA_e2uwPHLvk/view?usp=sharing" },
+  { label: "Resume", href: "https://drive.google.com/file/d/1Oout-oQ-5UhfC3dEYIe0vH7P2KJw1s5a/view?usp=sharing" },
 ];
 
 export async function Sidebar() {
