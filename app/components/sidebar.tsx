@@ -46,7 +46,7 @@ const navItems = [
 
 const quickLinks = [
   { label: "Final Reflection Essay", href: "https://drive.google.com/file/d/1qn7uIq0Se5yJ9bONxd4ZlC8bMWtrfx9y/view?usp=sharing" },
-  { label: "IDS Research Essay", href: "https://drive.google.com/file/d/1wfBIoBsiF_aTzv7cl78PkhBDayI79ist/view?usp=sharing" },
+  { label: "IDS Research Essay", href: "/documents/IDS_493_Final_Reflection.pdf" },
   { label: "Executive Reflection Presentation", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
   { label: "Lab Project", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
   { label: "C++ Cryptographic Calculator", href: "https://drive.google.com/file/d/1V6WOkPdPeMkXXh4jISHHYA_e2uwPHLvk/view?usp=sharing" },
