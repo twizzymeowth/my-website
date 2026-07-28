@@ -11,11 +11,11 @@ import { draftMode } from "next/headers";
 const fallbackEducation = [
   {
     _id: "fallback-edu-1",
-    title: "B.S. Cybersecurity",
-    subtitle: "Old Dominion University — GPA: 3.05 — Graduating Spring 2026",
+    title: "B.S. / M.S. Cybersecurity",
+    subtitle: "Old Dominion University — GPA: 3.14",
     description:
-      "Currently enrolled at ODU pursuing a Bachelor of Science in Cybersecurity. After graduating, pursuing a master's degree in Cybersecurity at ODU.",
-    tags: ["Cybersecurity", "ODU", "Spring 2026"],
+      "Graduated ODU with a BS in Cybersecurity currently pursuing a Masters Degree in cybersecurity still at ODU expecting to graduate in spring 2027.",
+    tags: ["Cybersecurity", "ODU", "Spring 2027"],
     category: "academics" as const,
     order: 1,
   },
@@ -25,93 +25,102 @@ const fallbackExperience = [
   {
     _id: "fallback-exp-1",
     title: "Cybersecurity Consultant",
-    subtitle: "COVA CCI Cyber Clinic — Aug 2025 - Present",
+    subtitle: "COVA CCI Cyber Clinic / Valor Cybersecurity — Aug 2025 – Present",
     description:
-      "Consulted the City of Suffolk under Valor Cybersecurity to improve security practices, mitigate risk, and innovate cybersecurity solutions.",
+      "Consulted the City of Suffolk on cybersecurity improvements and risk mitigation under Valor Cybersecurity's Greg Tomchick. Applied classroom knowledge in a practical consulting environment with exposure to cyber threat intelligence.",
     tags: ["Consulting", "Risk Mitigation", "Threat Intelligence"],
     category: "cyberClinic" as const,
     order: 1,
   },
   {
     _id: "fallback-exp-2",
-    title: "ODU IT Help Desk",
-    subtitle: "July 2025 - Present",
+    title: "IT Help Desk Technician",
+    subtitle: "ODU IT Help Desk — July 2025 – Present",
     description:
-      "Resolving technical issues for EVMC and ODU faculty, staff, and students via ServiceNow. Using troubleshooting resources, OS knowledge, network infrastructure, and Active Directory to assist and escalate tickets.",
+      "Resolve technical issues for EVMC and ODU faculty, staff, and students via ServiceNow. Utilize knowledge bases, OS, network infrastructure, and Active Directory skills to efficiently assist and escalate tickets.",
     tags: ["ServiceNow", "Active Directory", "Troubleshooting"],
     category: "cyberClinic" as const,
     order: 2,
+  },
+  {
+    _id: "fallback-exp-3",
+    title: "Escalation Squad / Student Lead",
+    subtitle: "ODU IT Help Desk — March 2026 – Present",
+    description:
+      "Promoted to lead role handling escalated incidents for EVMC and ODU faculty and staff. Audits and assists with tickets in ServiceNow, ensures accuracy and proper escalation, and mentors fellow student technicians.",
+    tags: ["Leadership", "ServiceNow", "Mentoring"],
+    category: "cyberClinic" as const,
+    order: 3,
   },
 ];
 
 const fallbackSkillGroups = [
   {
-    title: "Vulnerability Assessment & Penetration Testing",
+    title: "Programming & Scripting",
     artifacts: [
       {
-        title: "CYSE 450 Lab 5 - SQL Injection Attack",
+        title: "Python",
         description:
-          "Used VirtualBox to execute web security breaches on an isolated database, including planting an XSS trap and bypassing login hurdles using SQL injection techniques.",
-        tags: ["SQL Injection", "XSS", "VirtualBox"],
+          "Proficient in Python including classes, functions, and subprocess tasks. Applied in cryptographic calculators and automation scripts.",
+        tags: ["Python", "Scripting", "Automation"],
       },
       {
-        title: "Tenable Vulnerability Scan Report",
+        title: "C++",
         description:
-          "Analyzed and ran scans on servers alongside generating reports of the data to prioritize context-aware metrics and dynamic threat intelligence.",
-        tags: ["Tenable", "Vulnerability Scanning", "Threat Intelligence"],
+          "Experience with C++ covering classes and functions for systems-level programming tasks.",
+        tags: ["C++", "Systems Programming"],
       },
       {
-        title: "Ethical Hacking Lab on Kali Linux",
+        title: "Linux Scripting",
         description:
-          "Explored vulnerabilities in various systems and operated industry-leading tools and frameworks to perform penetration testing on different target systems.",
+          "Knowledgeable Linux usage including shell scripting, running Metasploit, and scheduling recurring tasks with Crontab.",
+        tags: ["Linux", "Bash", "Crontab", "Metasploit"],
+      },
+    ],
+  },
+  {
+    title: "Vulnerability Assessment & Security Tools",
+    artifacts: [
+      {
+        title: "Tenable",
+        description:
+          "Performed vulnerability scanning and server scans, then generated and analyzed reports with context-aware metrics and dynamic threat intelligence.",
+        tags: ["Tenable", "Vulnerability Scanning", "Reporting"],
+      },
+      {
+        title: "Kali Linux & Penetration Testing",
+        description:
+          "Utilized Kali Linux and industry-leading frameworks to identify and exploit vulnerabilities across various systems in ethical hacking labs.",
         tags: ["Kali Linux", "Penetration Testing", "Ethical Hacking"],
       },
-    ],
-  },
-  {
-    title: "Systems Administration & Scripting",
-    artifacts: [
       {
-        title: "Python Cryptographic Calculator",
+        title: "Network Infrastructure",
         description:
-          "Created a program using Python that handles basic mod calculations, Fermat's Little Theorem, and the Extended Euclidean Algorithm using classes, functions, and subprocesses.",
-        tags: ["Python", "Cryptography", "Algorithms"],
-      },
-      {
-        title: "Linux & Crontab Configuration",
-        description:
-          "Demonstrated knowledgeable-level Linux usage by running scripts such as Metasploit and scheduling recurring system tasks using Crontab.",
-        tags: ["Linux", "Crontab", "Metasploit"],
-      },
-      {
-        title: "ServiceNow / Active Directory Help Desk Ticket",
-        description:
-          "Resolved technical issues for EVMC and ODU faculty via ServiceNow, utilizing OS, network infrastructure, and Active Directory knowledge to assist and escalate tickets.",
-        tags: ["ServiceNow", "Active Directory", "Help Desk"],
+          "Solid understanding of network infrastructure including the Internet protocol stack, wireless communications, firewalls, IDS/IPS, and TLS.",
+        tags: ["Networking", "Firewalls", "IDS/IPS", "TLS"],
       },
     ],
   },
   {
-    title: "Cybersecurity Research & Consulting",
+    title: "IT Operations & Administration",
     artifacts: [
       {
-        title: "CYSE 280 Research Paper: AI in Cloud Security",
+        title: "ServiceNow",
         description:
-          "Authored a paper scoring 96/100 arguing why AI systems are successful when integrated to protect cloud-based services and optimize system performance.",
-        tags: ["AI/ML", "Cloud Security", "Research"],
-        link: "https://drive.google.com/file/d/118fb8ooXrzbzYiNPpjoBK0kmzlibZGmr/view?usp=drive_link",
+          "Daily use of ServiceNow for ticket creation, resolution, auditing, and reporting. Ensures accurate documentation and proper escalation procedures.",
+        tags: ["ServiceNow", "ITSM", "Ticketing"],
       },
       {
-        title: "Executive Reflection Presentation: City of Suffolk",
+        title: "Active Directory",
         description:
-          "Consulted for the City of Suffolk through the COVA CCI Cyber Clinic, establishing secure communication via encrypted emails and successfully communicating remediation strategies.",
-        tags: ["Consulting", "Remediation", "Client-Facing"],
+          "Hands-on experience managing and troubleshooting Active Directory as part of enterprise IT support for ODU and EVMC.",
+        tags: ["Active Directory", "Identity Management", "Windows"],
       },
       {
-        title: "Individual Final Reflection: Cyber Clinic",
+        title: "OS Troubleshooting",
         description:
-          "Self-evaluated consulting skills and project management, demonstrating an understanding of the socio-technical approach to cyber risk management and client expectations.",
-        tags: ["Reflection", "Risk Management", "Project Management"],
+          "Proficient in diagnosing and resolving OS-level issues across Windows and Linux environments for faculty, staff, and students.",
+        tags: ["Windows", "Linux", "Troubleshooting"],
       },
     ],
   },
