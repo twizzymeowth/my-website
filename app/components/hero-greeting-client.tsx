@@ -9,11 +9,17 @@ function getGreeting() {
   return "Good evening";
 }
 
+const ABOUT_BIO = [
+  "My name is Christopher Kundrat; I currently have a BS in Cybersecurity at ODU and I am pursuing my Masters Degree in Cybersecurity at ODU while currently working at the ODU IT Help Desk.",
+  "After I graduate this spring, I am hoping to start my career in IT so that I could pursue my dream job of a system administrator.",
+];
+
 interface HeroGreetingClientProps {
   fullName: string;
   bio: string;
   email: string;
   phone: string;
+  linkedin?: string;
 }
 
 export function HeroGreetingClient({
@@ -21,6 +27,7 @@ export function HeroGreetingClient({
   bio,
   email,
   phone,
+  linkedin,
 }: HeroGreetingClientProps) {
   const [greeting, setGreeting] = useState("Good evening");
 
@@ -34,9 +41,11 @@ export function HeroGreetingClient({
       <h1 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
         {fullName}
       </h1>
-      <p className="mt-3 max-w-lg text-lg leading-relaxed text-muted-foreground">
-        {bio}
-      </p>
+      {bio && (
+        <p className="mt-3 max-w-lg text-lg leading-relaxed text-muted-foreground">
+          {bio}
+        </p>
+      )}
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <a
           href={`mailto:${email}`}
@@ -61,6 +70,38 @@ export function HeroGreetingClient({
         <span className="rounded-full border border-border px-4 py-2 text-sm text-muted-foreground">
           {phone}
         </span>
+        {linkedin && (
+          <a
+            href={linkedin.startsWith("http") ? linkedin : `https://${linkedin}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-accent hover:text-accent"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect width="4" height="12" x="2" y="9" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            LinkedIn
+          </a>
+        )}
+      </div>
+      <div className="mt-6 flex flex-col gap-3 max-w-xl">
+        {ABOUT_BIO.map((paragraph, i) => (
+          <p key={i} className="text-base leading-relaxed text-muted-foreground">
+            {paragraph}
+          </p>
+        ))}
       </div>
     </section>
   );
