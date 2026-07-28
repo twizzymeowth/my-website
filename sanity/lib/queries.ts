@@ -5,6 +5,7 @@ export interface HeroSectionData {
   bio: string
   email: string
   phone: string
+  linkedin?: string
 }
 
 export interface SiteSettingsData {
@@ -60,7 +61,7 @@ async function safeFetch<T>(
 
 export async function getHeroSection(draft = false): Promise<HeroSectionData | null> {
   return safeFetch<HeroSectionData>(
-    `*[_type == "heroSection" && _id == "heroSection"][0]{fullName,bio,email,phone}`,
+    `*[_type == "heroSection" && _id == "heroSection"][0]{fullName,bio,email,phone,linkedin}`,
     undefined,
     draft,
   )

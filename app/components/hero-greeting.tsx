@@ -9,7 +9,7 @@ export async function HeroGreeting() {
       fullName={hero?.fullName ?? "Christopher Kundrat"}
       bio={hero?.bio ?? ""}
       email={hero?.email ?? "ckundrat@odu.edu"}
-      phone={hero?.phone ?? "757-298-5953"}
+      phone="757-298-5953"
       linkedin={hero?.linkedin ?? "https://linkedin.com/in/chris-kundrat777"}
     />
   );
