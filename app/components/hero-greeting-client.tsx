@@ -9,6 +9,11 @@ function getGreeting() {
   return "Good evening";
 }
 
+const ABOUT_BIO = [
+  "My name is Christopher Kundrat; I currently have a BS in Cybersecurity at ODU and I am pursuing my Masters Degree in Cybersecurity at ODU while currently working at the ODU IT Help Desk.",
+  "After I graduate this spring, I am hoping to start my career in IT so that I could pursue my dream job of a system administrator.",
+];
+
 interface HeroGreetingClientProps {
   fullName: string;
   bio: string;
@@ -90,6 +95,13 @@ export function HeroGreetingClient({
             LinkedIn
           </a>
         )}
+      </div>
+      <div className="mt-6 flex flex-col gap-3 max-w-xl">
+        {ABOUT_BIO.map((paragraph, i) => (
+          <p key={i} className="text-base leading-relaxed text-muted-foreground">
+            {paragraph}
+          </p>
+        ))}
       </div>
     </section>
   );
