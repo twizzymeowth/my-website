@@ -21,7 +21,7 @@ export function SkillsSection({ skillGroups }: SkillsSectionProps) {
     <section id="skills" className="scroll-mt-8">
       <div className="mb-5 flex items-center justify-between">
         <h2 className="text-2xl font-bold tracking-tight text-foreground">
-          Skills
+          Relevant Skills
         </h2>
       </div>
 

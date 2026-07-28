@@ -11,13 +11,23 @@ import { draftMode } from "next/headers";
 const fallbackEducation = [
   {
     _id: "fallback-edu-1",
-    title: "B.S. / M.S. Cybersecurity",
-    subtitle: "Old Dominion University — GPA: 3.14",
+    title: "B.S. in Cybersecurity",
+    subtitle: "Old Dominion University — Graduated Spring 2026",
     description:
-      "Graduated ODU with a BS in Cybersecurity currently pursuing a Masters Degree in cybersecurity still at ODU expecting to graduate in spring 2027.",
-    tags: ["Cybersecurity", "ODU", "Spring 2027"],
+      "Completed a Bachelor of Science in Cybersecurity at Old Dominion University with a GPA of 3.14. Coursework included network security, ethical hacking, cryptography, and systems administration.",
+    tags: ["Cybersecurity", "ODU", "Graduated"],
     category: "academics" as const,
     order: 1,
+  },
+  {
+    _id: "fallback-edu-2",
+    title: "M.S. in Cybersecurity",
+    subtitle: "Old Dominion University — In Progress, Expected Spring 2027",
+    description:
+      "Currently pursuing a Master of Science in Cybersecurity at Old Dominion University. Building on undergraduate foundations with advanced study in security operations, incident response, and enterprise security architecture.",
+    tags: ["Cybersecurity", "ODU", "In Progress"],
+    category: "academics" as const,
+    order: 2,
   },
 ];
 
@@ -152,7 +162,7 @@ export default async function Home() {
           <div className="mt-10 flex flex-col gap-12">
             <SectionRow title="Education" items={education} />
             <SkillsSection skillGroups={fallbackSkillGroups} />
-            <SectionRow title="Experience" items={experience} />
+            <SectionRow title="Relevant Experience" items={experience} />
           </div>
           <footer className="mt-16 border-t border-border pb-8 pt-6 text-xs text-muted-foreground">
             <p>{footerText}</p>
