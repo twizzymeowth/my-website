@@ -5,7 +5,6 @@ import { Sidebar } from "@/app/components/sidebar";
 import { assignmentSections } from "@/app/components/linux-assignment-section";
 
 const pdfUrl = "https://blobs.vusercontent.net/blob/LinuxAssignment_9-2-4YoWU2RbjAPaeccUWiz5Jc78dbDkbH.pdf";
-const docxUrl = "https://blobs.vusercontent.net/blob/LinuxAssignment_9-eGF7CBgm6gcjvQLKmfYWfL1ECKwYfv.docx";
 
 const reportMarkers = [
   "1. Project Introduction",
@@ -65,14 +64,13 @@ export default async function LinuxAssignmentDetail({
           <header className="mt-10 border-b border-border pb-8">
             <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{activeSection.eyebrow}</p>
             <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground">{activeSection.title}</h1>
-            <p className="mt-3 text-sm text-muted-foreground">Linux Assignment 9 · Full report reading from the attached Word document</p>
+            <p className="mt-3 text-sm text-muted-foreground">Linux Assignment 9 · Full report section</p>
           </header>
 
           <article className="mt-10 rounded-lg bg-surface px-6 py-7 sm:px-10 sm:py-9">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-5">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Full section text</p>
               <div className="flex gap-4 text-xs font-medium text-muted-foreground">
-                <a href={docxUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-border underline-offset-4 hover:text-accent">Open Word source</a>
                 <a href={`${pdfUrl}#page=${activeSection.pages.split("-")[0]}`} target="_blank" rel="noopener noreferrer" className="underline decoration-border underline-offset-4 hover:text-accent">Open PDF</a>
               </div>
             </div>
@@ -89,7 +87,7 @@ export default async function LinuxAssignmentDetail({
           {report.images.length > 0 && (
             <section className="mt-10 rounded-lg border border-border bg-surface p-5 sm:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Report images</p>
-              <p className="mt-2 text-sm text-muted-foreground">Screenshots and figures extracted directly from the Word document.</p>
+              <p className="mt-2 text-sm text-muted-foreground">Screenshots and figures from the report.</p>
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 {report.images.map((src, imageIndex) => (
                   <figure key={src.slice(-32)} className="overflow-hidden rounded-md border border-border bg-background">
