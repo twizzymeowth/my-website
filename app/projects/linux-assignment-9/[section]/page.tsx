@@ -101,9 +101,9 @@ export default async function LinuxAssignmentDetail({
 
           <nav aria-label="Assignment sections" className="mt-16 grid gap-3 border-t border-border pt-6 sm:grid-cols-2">
             {assignmentSections.map((item, itemIndex) => (
-              <a key={item.title} href={`/projects/linux-assignment-9/${itemIndex + 1}`} className="relative z-10 block cursor-pointer rounded-lg bg-surface px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted" aria-label={`Open ${item.title}`}>
+              <Link key={item.title} href={`/projects/linux-assignment-9/${itemIndex + 1}`} className="relative z-10 block cursor-pointer rounded-lg bg-surface px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted" aria-label={`Open ${item.title}`}>
                 <span className="mr-2 font-mono text-xs text-accent">0{itemIndex + 1}</span>{item.title}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
