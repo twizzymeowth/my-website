@@ -92,11 +92,11 @@ export function LinuxAssignmentSection() {
 
       <div className="flex flex-col gap-3">
         {assignmentSections.map((section, index) => (
-          <Link key={section.title} href={`/projects/linux-assignment-9/${index + 1}`} className="group flex w-full items-center gap-4 rounded-lg bg-surface px-5 py-4 text-left transition-colors hover:bg-muted">
+          <a key={section.title} href={`/projects/linux-assignment-9/${index + 1}`} className="group relative z-10 flex w-full cursor-pointer items-center gap-4 rounded-lg bg-surface px-5 py-4 text-left transition-colors hover:bg-muted" aria-label={`Open ${section.title}`}>
             <span className="font-mono text-xs text-accent">0{index + 1}</span>
             <span className="flex-1"><span className="block text-xs font-medium uppercase tracking-wider text-muted-foreground">{section.eyebrow}</span><span className="mt-1 block text-base font-semibold text-foreground">{section.title}</span></span>
             <span className="text-xl text-accent" aria-hidden="true">+</span>
-          </Link>
+          </a>
         ))}
       </div>
     </section>
