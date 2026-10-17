@@ -6,7 +6,7 @@ export const assignmentSections = [
     eyebrow: "01 / Project introduction",
     pages: "1-2",
     content: [
-      "CYSE 609 Linux Security & Generative AI final project built a two-user environment inside a Kali Linux VM. User1 is the manager and belongs to both Manager and Employee; User2 is the lower-privilege employee.",
+      "CYSE 609 final project built a two-user environment inside a Kali Linux VM. User1 is the manager and belongs to both Manager and Employee; User2 is the lower-privilege employee.",
       "The scenario follows an attack chain: reconnaissance with getent and grep, exploitation by cracking a leaked hash with John the Ripper, impersonation with su, and an attempted privilege escalation with usermod.",
       "ChatGPT generated commands and explanations while Claude helped troubleshoot failed commands. Every command was typed, run, verified, and documented by Chris in the lab VM.",
     ],
@@ -85,7 +85,7 @@ export function LinuxAssignmentSection() {
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">Projects</p>
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">Linux Assignment 9</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-foreground">Assignment 9</h2>
         </div>
         <a href="https://blobs.vusercontent.net/blob/Linux9%20%281%29-Rr0rlkDxzYW2FmXe1LV7UYKWoHzLk4.docx" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-muted-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent">Download source DOCX</a>
       </div>

@@ -33,7 +33,12 @@ async function readReport() {
       ),
     },
   );
-  return { text: raw.value, images };
+  const text = raw.value
+    .replace(/linux security/gi, "")
+    .replace(/generative ai/gi, "")
+    .replace(/[ \t]+&[ \t]+/g, " ")
+    .replace(/[ \t]{2,}/g, " ");
+  return { text, images };
 }
 
 function sectionText(text: string, index: number) {

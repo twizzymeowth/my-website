@@ -122,7 +122,7 @@ export async function Sidebar() {
               href="#linux-assignment-9"
               className="flex items-center justify-between rounded-md bg-accent/10 px-3 py-2 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
             >
-              <span>Linux Assignment 9</span>
+              <span>Assignment 9</span>
               <span aria-hidden="true">→</span>
             </a>
           </div>
