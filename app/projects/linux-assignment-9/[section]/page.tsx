@@ -103,7 +103,7 @@ export default async function LinuxAssignmentDetail({
             {assignmentSections.map((item, itemIndex) => (
               <a key={item.title} href={`/projects/linux-assignment-9/${itemIndex + 1}`} className="relative z-10 block cursor-pointer rounded-lg bg-surface px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted" aria-label={`Open ${item.title}`}>
                 <span className="mr-2 font-mono text-xs text-accent">0{itemIndex + 1}</span>{item.title}
-              </Link>
+              </a>
             ))}
           </nav>
         </div>
