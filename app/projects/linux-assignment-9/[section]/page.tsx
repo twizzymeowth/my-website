@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { notFound } from "next/navigation";
 import mammoth from "mammoth";
 import { Sidebar } from "@/app/components/sidebar";
@@ -17,10 +19,11 @@ const reportMarkers = [
 ];
 
 async function readReport() {
-  const raw = await mammoth.extractRawText({ path: "data/LinuxAssignment_9-4ceaf4.docx" });
+  const reportBuffer = await readFile(join(process.cwd(), "data", "LinuxAssignment_9-4ceaf4.docx"));
+  const raw = await mammoth.extractRawText({ buffer: reportBuffer });
   const images: string[] = [];
   await mammoth.convertToHtml(
-    { path: "data/LinuxAssignment_9-4ceaf4.docx" },
+    { buffer: reportBuffer },
     {
       convertImage: mammoth.images.imgElement((image) =>
         image.read("base64").then((base64) => {
