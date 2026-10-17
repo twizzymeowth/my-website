@@ -1,8 +1,6 @@
-"use client";
+import Link from "next/link";
 
-import { useState } from "react";
-
-const assignmentSections = [
+export const assignmentSections = [
   {
     title: "Intro",
     eyebrow: "01 / Project introduction",
@@ -82,9 +80,6 @@ const assignmentSections = [
 ];
 
 export function LinuxAssignmentSection() {
-  const [openSection, setOpenSection] = useState<string | null>(null);
-  const activeSection = assignmentSections.find((section) => section.title === openSection);
-
   return (
     <section id="linux-assignment-9" className="scroll-mt-8">
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
@@ -95,31 +90,15 @@ export function LinuxAssignmentSection() {
         <a href="https://blobs.vusercontent.net/blob/LinuxAssignment_9-2-4YoWU2RbjAPaeccUWiz5Jc78dbDkbH.pdf" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-muted-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent">View full PDF</a>
       </div>
 
-      {!activeSection ? (
-        <div className="flex flex-col gap-3">
-          {assignmentSections.map((section, index) => (
-            <button key={section.title} type="button" onClick={() => setOpenSection(section.title)} className="group flex w-full items-center gap-4 rounded-lg bg-surface px-5 py-4 text-left transition-colors hover:bg-muted">
-              <span className="font-mono text-xs text-accent">0{index + 1}</span>
-              <span className="flex-1"><span className="block text-xs font-medium uppercase tracking-wider text-muted-foreground">{section.eyebrow}</span><span className="mt-1 block text-base font-semibold text-foreground">{section.title}</span></span>
-              <span className="text-xl text-accent" aria-hidden="true">+</span>
-            </button>
-          ))}
-        </div>
-      ) : (
-        <article className="rounded-lg bg-surface px-5 py-5 sm:px-7 sm:py-7">
-          <button type="button" onClick={() => setOpenSection(null)} className="mb-7 text-xs font-semibold uppercase tracking-[0.18em] text-accent hover:underline">← Back to project sections</button>
-          <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{activeSection.eyebrow}</p>
-          <h3 className="mt-2 text-3xl font-bold tracking-tight text-foreground">{activeSection.title}</h3>
-          <div className="mt-7 flex flex-col gap-5 text-sm leading-7 text-muted-foreground">
-            {activeSection.content.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-          <figure className="mt-8 overflow-hidden rounded-md border border-border bg-background">
-            <iframe title={`${activeSection.title} report screenshots`} src={`https://blobs.vusercontent.net/blob/LinuxAssignment_9-2-4YoWU2RbjAPaeccUWiz5Jc78dbDkbH.pdf#page=${activeSection.pages.split("-")[0]}&view=FitH`} className="h-[28rem] w-full" />
-            <figcaption className="border-t border-border px-3 py-2 text-xs text-muted-foreground">Report pages {activeSection.pages} — screenshots and evidence from the original PDF.</figcaption>
-          </figure>
-          <div className="mt-6 flex flex-wrap gap-1.5">{activeSection.tags.map((tag) => <span key={tag} className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">{tag}</span>)}</div>
-        </article>
-      )}
+      <div className="flex flex-col gap-3">
+        {assignmentSections.map((section, index) => (
+          <Link key={section.title} href={`/projects/linux-assignment-9/${index + 1}`} className="group flex w-full items-center gap-4 rounded-lg bg-surface px-5 py-4 text-left transition-colors hover:bg-muted">
+            <span className="font-mono text-xs text-accent">0{index + 1}</span>
+            <span className="flex-1"><span className="block text-xs font-medium uppercase tracking-wider text-muted-foreground">{section.eyebrow}</span><span className="mt-1 block text-base font-semibold text-foreground">{section.title}</span></span>
+            <span className="text-xl text-accent" aria-hidden="true">+</span>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }
