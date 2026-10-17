@@ -87,7 +87,7 @@ export function LinuxAssignmentSection() {
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">Projects</p>
           <h2 className="text-2xl font-bold tracking-tight text-foreground">Linux Assignment 9</h2>
         </div>
-        <a href="https://blobs.vusercontent.net/blob/LinuxAssignment_9-2-4YoWU2RbjAPaeccUWiz5Jc78dbDkbH.pdf" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-muted-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent">View full PDF</a>
+        <a href="https://blobs.vusercontent.net/blob/Linux9%20%281%29-Rr0rlkDxzYW2FmXe1LV7UYKWoHzLk4.docx" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-muted-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent">Download source DOCX</a>
       </div>
 
       <div className="flex flex-col gap-3">

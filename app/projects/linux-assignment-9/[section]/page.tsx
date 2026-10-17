@@ -6,7 +6,7 @@ import mammoth from "mammoth";
 import { Sidebar } from "@/app/components/sidebar";
 import { assignmentSections } from "@/app/components/linux-assignment-section";
 
-const pdfUrl = "https://blobs.vusercontent.net/blob/LinuxAssignment_9-2-4YoWU2RbjAPaeccUWiz5Jc78dbDkbH.pdf";
+const reportUrl = "https://blobs.vusercontent.net/blob/Linux9%20%281%29-Rr0rlkDxzYW2FmXe1LV7UYKWoHzLk4.docx";
 
 const reportMarkers = [
   "1. Project Introduction",
@@ -19,7 +19,7 @@ const reportMarkers = [
 ];
 
 async function readReport() {
-  const reportBuffer = await readFile(join(process.cwd(), "data", "LinuxAssignment_9-4ceaf4.docx"));
+  const reportBuffer = await readFile(join(process.cwd(), "data", "Linux9-1-7459b9.docx"));
   const raw = await mammoth.extractRawText({ buffer: reportBuffer });
   const images: string[] = [];
   await mammoth.convertToHtml(
@@ -74,7 +74,7 @@ export default async function LinuxAssignmentDetail({
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-5">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Full section text</p>
               <div className="flex gap-4 text-xs font-medium text-muted-foreground">
-                <a href={`${pdfUrl}#page=${activeSection.pages.split("-")[0]}`} target="_blank" rel="noopener noreferrer" className="underline decoration-border underline-offset-4 hover:text-accent">Open PDF</a>
+                <a href={reportUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-border underline-offset-4 hover:text-accent">Open source DOCX</a>
               </div>
             </div>
             <div className="mt-8 space-y-6 text-sm leading-8 text-muted-foreground sm:text-base">
