@@ -30,18 +30,33 @@ export default async function LinuxAssignmentDetail({
             <p className="mt-3 text-sm text-muted-foreground">Linux Assignment 9 · Report pages {activeSection.pages}</p>
           </header>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(19rem,30rem)]">
-            <article className="flex flex-col gap-6 text-sm leading-8 text-muted-foreground">
-              {activeSection.content.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              <div className="flex flex-wrap gap-1.5 pt-2">
+          <div className="mt-10 space-y-10">
+            <article className="rounded-lg bg-surface px-6 py-7 sm:px-8">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Section reading</p>
+                <a href={`${pdfUrl}#page=${activeSection.pages.split("-")[0]}`} target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-muted-foreground underline decoration-border underline-offset-4 hover:text-accent">
+                  Open source pages
+                </a>
+              </div>
+              <div className="mt-7 flex flex-col gap-6 text-sm leading-8 text-muted-foreground sm:text-base">
+                {activeSection.content.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-1.5">
                 {activeSection.tags.map((tag) => <span key={tag} className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">{tag}</span>)}
               </div>
             </article>
 
-            <figure className="overflow-hidden rounded-lg border border-border bg-surface lg:sticky lg:top-8 lg:self-start">
-              <iframe title={`${activeSection.title} PDF pages`} src={`${pdfUrl}#page=${activeSection.pages.split("-")[0]}&view=FitH`} className="h-[34rem] w-full" />
-              <figcaption className="border-t border-border px-4 py-3 text-xs leading-5 text-muted-foreground">
-                Original PDF evidence for this section. Use the PDF viewer controls to inspect the screenshots and additional pages.
+            <figure className="overflow-hidden rounded-lg border border-border bg-surface">
+              <div className="flex items-center justify-between gap-4 border-b border-border px-5 py-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Original evidence</p>
+                  <p className="mt-1 text-xs text-muted-foreground">PDF pages {activeSection.pages} · screenshots and source material</p>
+                </div>
+                <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="shrink-0 text-xs font-medium text-muted-foreground underline decoration-border underline-offset-4 hover:text-accent">View full PDF</a>
+              </div>
+              <iframe title={`${activeSection.title} PDF pages`} src={`${pdfUrl}#page=${activeSection.pages.split("-")[0]}&view=FitH`} className="h-[70vh] min-h-[32rem] w-full" />
+              <figcaption className="border-t border-border px-5 py-4 text-xs leading-5 text-muted-foreground">
+                The original report stays available here so you can inspect the screenshots and compare them with the formatted reading above.
               </figcaption>
             </figure>
           </div>
