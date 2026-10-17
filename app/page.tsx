@@ -1,4 +1,5 @@
 import { HeroGreeting } from "./components/hero-greeting";
+import { LinuxAssignmentSection } from "./components/linux-assignment-section";
 import { SectionRow } from "./components/section-row";
 import { Sidebar } from "./components/sidebar";
 import { SkillsSection } from "./components/skills-section";
@@ -163,6 +164,7 @@ export default async function Home() {
             <SectionRow title="Education" items={education} />
             <SkillsSection skillGroups={fallbackSkillGroups} />
             <SectionRow title="Relevant Experience" items={experience} />
+            <LinuxAssignmentSection />
           </div>
           <footer className="mt-16 border-t border-border pb-8 pt-6 text-xs text-muted-foreground">
             <p>{footerText}</p>

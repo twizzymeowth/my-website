@@ -45,11 +45,7 @@ const navItems = [
 ];
 
 const quickLinks = [
-  { label: "Final Reflection Essay", href: "https://drive.google.com/file/d/1qn7uIq0Se5yJ9bONxd4ZlC8bMWtrfx9y/view?usp=sharing" },
-  { label: "IDS Research Essay", href: "https://drive.google.com/file/d/1VAxS-RrkzXCRej0sFfZBLhhjDmZB-12m/view?usp=sharing" },
   { label: "Executive Reflection Presentation", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
-  { label: "Lab Project", href: "https://drive.google.com/file/d/1tCTcvlIMfP9S_9cxlCKlV94Z9IkhNXMd/view?usp=sharing" },
-  { label: "C++ Cryptographic Calculator", href: "https://drive.google.com/file/d/1V6WOkPdPeMkXXh4jISHHYA_e2uwPHLvk/view?usp=sharing" },
   { label: "Resume", href: "https://drive.google.com/file/d/1Oout-oQ-5UhfC3dEYIe0vH7P2KJw1s5a/view?usp=sharing" },
 ];
 
@@ -119,6 +115,16 @@ export async function Sidebar() {
                 <span className="truncate">{label}</span>
               </a>
             ))}
+          </div>
+          <div className="mt-6 border-t border-border pt-4">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Projects</h3>
+            <a
+              href="#linux-assignment-9"
+              className="flex items-center justify-between rounded-md bg-accent/10 px-3 py-2 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
+              <span>Linux Assignment 9</span>
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
 
